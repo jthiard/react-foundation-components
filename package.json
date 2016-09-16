@@ -20,7 +20,8 @@
     "start-examples-cdn-flex": "npm run build && node server.js examples/cdn-flex/webpack.config.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "release-patch": "npm run build && release-it",
-    "release-minor": "npm run build && release-it minor"
+    "release-minor": "npm run build && release-it minor",
+    "install": "npm run clean && babel --quiet src --out-dir lib && cpy \"**/*.scss\" ../lib --parents --cwd=src && node create-flex-components.js && node create-global-scoped-components.js"
   },
   "repository": {
     "type": "git",
